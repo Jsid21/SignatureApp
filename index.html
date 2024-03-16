@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Stalemate&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 style="color: #EADEDA;font-size: 50px;">MySign</h1>
+    <div class="container-fluid">
+        <i class="fa-solid" id="menu" style="position:relative;"></i>
+        <!-- <i class="fa-solid fa-xmark" id="cnl" style="position:relative;left: 0px;"></i> -->
+        <div class="container-fluid text-center" id="dropdnw">
+            <div class="row">
+                <div class="col">
+                    <button type="button" class="btn btn-success" id="dnl"><a id="downloadimg" href="#" download="mysign.png" style="text-decoration: none; color: white;" ><i class="fa-solid fa-download"></i>Download</a></button>
+                    <button id="clear" type="button" class="btn btn-warning"><i class="fa-solid fa-eraser"></i>clear</Button>
+                    <div id="colorselection"><i class="fa-solid fa-paintbrush"></i>colour<input type="color" id="colour"></div>
+                    <div id="lwidth">
+                        <i class="fa-solid fa-text-width"></i>Line width
+                        <select id="linewidth">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="5">5</option>
+                            <option value="7">7</option>
+                            <option value="8" selected>8</option>
+                            <option value="10">10</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+                    <div id="btheme"><i class="fa-solid fa-sun"></i>Black canvas<input type="checkbox" id="theme"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
