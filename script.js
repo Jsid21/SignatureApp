@@ -44,6 +44,9 @@ function draw(e) {
 canvas.addEventListener("mousedown", startposition);
 canvas.addEventListener("mouseup", endposition);
 canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("touchstart",startposition);
+canvas.addEventListener("touchmove",draw);
+canvas.addEventListener("touchend",endposition);
 
 imgdown.addEventListener("click", () => {
     let img = canvas.toDataURL("image/png");
