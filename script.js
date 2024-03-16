@@ -14,6 +14,12 @@ function adjustCanvasSize() {
     canvas.width = window.innerWidth-25;
 }
 
+function posmouse(e){
+    let mouseX=e.offsetX * canvas.width / canvas.clientWidth | 0;
+    let mouseY=e.offsetY * canvas.height / canvas.clientHeight | 0;
+    return {x:mouseX , y: mouseY};
+}
+
 // Call adjustCanvasSize initially and whenever the window is resized
 adjustCanvasSize();
 window.addEventListener("resize", adjustCanvasSize);
@@ -35,10 +41,10 @@ function draw(e) {
     ctx.lineWidth = linewidth.value;
     ctx.lineCap = "round";
     ctx.strokeStyle = color.value;
-    ctx.lineTo(e.pageX, e.pageY - 100);
+    ctx.lineTo(posmouse(e).x, posmouse(e).y);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(e.pageX, e.pageY - 100);
+    ctx.moveTo(posmouse(e).x, posmouse(e).y);
 }
 
 canvas.addEventListener("mousedown", startposition);
