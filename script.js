@@ -30,13 +30,15 @@ window.addEventListener("resize", adjustCanvasSize);
 let painting = false;
 
 function startposition(e) {
-    painting = true;
     if (e.type === 'mousedown') {
+        painting = true;
         draw(e);
     } else if (e.type === 'touchstart') {
+        painting = true;
         draw(getTouchPos(canvas, e));
     }
 }
+
 
 function endposition() {
     painting = false;
@@ -57,11 +59,21 @@ function draw(pos) {
 canvas.addEventListener("mousedown", startposition);
 canvas.addEventListener("mouseup", endposition);
 canvas.addEventListener("mousemove", draw);
-canvas.addEventListener("touchstart", startposition);
+canvas.addEventListener("touchstart", (e) => {
+    e.preventDefault(); // Prevent default touch action
+    startposition(e);
+});
+
 canvas.addEventListener("touchmove", (e) => {
+    e.preventDefault(); // Prevent default touch action
     draw(getTouchPos(canvas, e));
 });
-canvas.addEventListener("touchend", endposition);
+
+canvas.addEventListener("touchend", (e) => {
+    e.preventDefault(); // Prevent default touch action
+    endposition();
+});
+
 
 imgdown.addEventListener("click", () => {
     let img = canvas.toDataURL("image/png");
